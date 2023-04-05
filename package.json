@@ -1,7 +1,7 @@
 {
 	"name": "@cadev70/svelte-tooltips",
 	"description": "A svelte tooltips using action wrapper",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "MIT",
 	"keywords": [
 		"tooltips",
@@ -32,7 +32,6 @@
 		"svelte": "^3.54.0"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@sveltejs/package": "^2.0.2",
