@@ -1,7 +1,15 @@
-<script lang="ts">
-	import { tooltip } from '$lib/tooltip';
+<script lang="ts" context="module">
+	import { setConfig, tooltip } from '$lib/tooltip';
 	import type { Placement } from '$lib/tooltip.types';
 
+	setConfig({
+		offset: 0,
+		placement: 'bottom',
+		showArrow: false
+	});
+</script>
+
+<script lang="ts">
 	let content: string = 'Tips Content';
 	let placement: Placement = 'top';
 	let offset: number = 8;

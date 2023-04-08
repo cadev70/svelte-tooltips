@@ -11,9 +11,12 @@ export type Placement =
 	| 'left-start'
 	| 'left'
 	| 'left-end';
-export interface TooltipOptions {
+export interface TooltipOptions extends Config {
 	content: string;
 	disabled?: boolean;
+}
+
+export interface Config {
 	offset?: number;
 	placement?: Placement;
 	showArrow?: boolean;

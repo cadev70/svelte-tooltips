@@ -11,7 +11,7 @@ Basic:
   import { tooltip } from "@cadev70/svelte-tooltips"
 </script>
 
-<button use:tooltip={{ content: "Tips Content!",}}>Button</button>
+<button use:tooltip={{ content: "Tips Content!"}}>Button</button>
 ```
 
 More options:
@@ -31,6 +31,28 @@ More options:
   }}>
   Button
 </button>
+```
+
+Set global options.
+
+- *Call `setConfig()` before `use:tooltip`*
+- *`onMount()` is not a good place to call `setConfig()`*
+
+
+```svelte
+<script lang="ts">
+	import { setConfig, tooltip } from '@cadev70/svelte-tooltips';
+
+	setConfig({
+		offset: 0,
+		placement: 'bottom',
+		showArrow: false
+	});
+</script>
+...
+<button use:tooltip={{ content: "Tips Content!" }}>Button</button>
+...
+
 ```
 
 # Installation

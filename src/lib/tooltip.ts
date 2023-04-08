@@ -1,11 +1,15 @@
 import Tooltip from '$lib/Tooltip.svelte';
-import type { Placement, TooltipOptions } from '$lib/tooltip.types';
+import type { Config, Placement, TooltipOptions } from '$lib/tooltip.types';
 import { createPopper, type Instance } from '@popperjs/core';
 
+let globalConfig: Config | null = null;
 const SHOW_EVENTS = ['mouseenter', 'focus'];
 const HIDE_EVENTS = ['mouseleave', 'blur'];
 
 export function tooltip(reference: HTMLElement, options: TooltipOptions) {
+	if (!globalConfig) {
+		setConfig();
+	}
 	let _content: string;
 	let _disabled: boolean;
 	let _offset: number;
@@ -19,9 +23,9 @@ export function tooltip(reference: HTMLElement, options: TooltipOptions) {
 		const {
 			content = '',
 			disabled = false,
-			offset = 8,
-			placement = 'top',
-			showArrow = true
+			offset = globalConfig!.offset!,
+			placement = globalConfig!.placement!,
+			showArrow = globalConfig!.showArrow!
 		} = options;
 		_content = content;
 		_disabled = disabled;
@@ -92,5 +96,14 @@ export function tooltip(reference: HTMLElement, options: TooltipOptions) {
 				reference.removeEventListener(event, hide);
 			});
 		}
+	};
+}
+
+export function setConfig(config: Config = {}) {
+	globalConfig = {
+		offset: config?.offset === undefined || config?.offset === null ? 8 : config?.offset,
+		placement: config?.placement || 'top',
+		showArrow:
+			config?.showArrow === undefined || config?.showArrow === null ? true : config?.showArrow
 	};
 }
