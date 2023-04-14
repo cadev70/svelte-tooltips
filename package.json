@@ -1,7 +1,7 @@
 {
 	"name": "@cadev70/svelte-tooltips",
 	"description": "A svelte tooltips using action wrapper",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"license": "MIT",
 	"keywords": [
 		"tooltips",

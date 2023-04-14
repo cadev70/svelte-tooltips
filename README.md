@@ -59,7 +59,7 @@ Set global options.
 
 Override following CSS variables to apply custom styles. 
 
-```css
+```svelte
 <style>
   :root {
     --s3-tooltip-background-color: #333333;
