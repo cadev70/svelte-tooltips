@@ -41,18 +41,36 @@ Set global options.
 
 ```svelte
 <script lang="ts">
-	import { setConfig, tooltip } from '@cadev70/svelte-tooltips';
+  import { setConfig, tooltip } from '@cadev70/svelte-tooltips';
 
-	setConfig({
-		offset: 0,
-		placement: 'bottom',
-		showArrow: false
-	});
+  setConfig({
+    offset: 0,
+    placement: 'bottom',
+    showArrow: false
+  });
 </script>
 ...
 <button use:tooltip={{ content: "Tips Content!" }}>Button</button>
 ...
 
+```
+
+# Styling 
+
+Override following CSS variables to apply custom styles. 
+
+```svelte
+<style>
+  :root {
+    --s3-tooltip-background-color: #333333;
+    --s3-tooltip-border-radius: 4px;
+    --s3-tooltip-color: white;
+    --s3-tooltip-font-size: 13px;
+    --s3-tooltip-padding: 4px 8px;
+    --s3-tooltip-arrow-size: 8px;
+    --s3-tooltip-arrow-position-offset: -4px;
+  }
+</style>
 ```
 
 # Installation

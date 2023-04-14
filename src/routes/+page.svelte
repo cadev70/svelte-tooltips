@@ -43,6 +43,12 @@
 			showArrow: showArrow
 		}}>Button</button
 	>
+	<button
+		class="reference"
+		use:tooltip={{
+			content: `${content} (Global Config)`
+		}}>Button</button
+	>
 	<textarea bind:value={content} />
 	<select bind:value={placement}>
 		{#each PLACEMENTS as placementValue}
@@ -63,7 +69,7 @@
 
 	.reference {
 		height: 100px;
-		margin: 100px;
+		margin: 50px;
 		width: 100px;
 	}
 </style>
