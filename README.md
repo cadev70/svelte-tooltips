@@ -36,7 +36,6 @@ More options:
 Set global options.
 
 - *Call `setConfig()` before `use:tooltip`*
-- *`onMount()` is not a good place to call `setConfig()`*
 
 
 ```svelte
